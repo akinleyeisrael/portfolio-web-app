@@ -7,9 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import NavBar from "@/components/NavBar";
 
 
-
-const roboto = Roboto({ weight: "400", subsets: ["latin"] });
-
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -22,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="min-h-screen">
+        <main className={fontSans.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
