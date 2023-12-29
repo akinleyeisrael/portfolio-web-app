@@ -34,8 +34,8 @@ export const SigninForm = () => {
             const userIn = await signIn("credentials", {
                 email: data.get("email") as string,
                 password: data.get("password") as string,
-                redirect: false,
-                // callbackUrl: "/admin"
+                redirect: true,
+                callbackUrl: "/admin"
             });
             if (userIn?.error) {
                 setError("Email or password is not associated with an account");
