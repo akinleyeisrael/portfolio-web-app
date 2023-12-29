@@ -80,7 +80,7 @@ const NavBar = () => {
       className="top-0 inset-x-0 z-50 sticky max-w-[100rem] w-full mx-auto backdrop-filter backdrop-blur-lg border-b sm:flex sm:items-center sm:justify-between "
       aria-label="Global"
     >
-      <div className="flex items-center justify-between  md:px-10 m-2">
+      <div className="flex items-center justify-between m-2">
         <Link href={"/"}>
           {/* <Image src={"/logo.png"} alt={"logo"} width={500} height={500}/> */}
           <span className="font-bold text-2xl mx-2 leading-tight tracking-wider">AKIN</span>
