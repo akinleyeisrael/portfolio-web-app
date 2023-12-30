@@ -31,7 +31,7 @@ interface FormProps {
   exp: Experience;
 }
 
-async function AdminAbout({ info, exp }: FormProps) {
+const AdminAbout = async ({ info, exp }: FormProps) => {
   const infos = await prisma.info.findMany();
   const experiences = await prisma.experience.findMany();
 
