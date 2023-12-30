@@ -31,7 +31,7 @@ interface FormProps {
   exp: Experience;
 }
 
-export default async function adminAbout({ info, exp }: FormProps) {
+export async function AdminAbout({ info, exp }: FormProps) {
   const infos = await prisma.info.findMany();
   const experiences = await prisma.experience.findMany();
 
@@ -127,3 +127,5 @@ export default async function adminAbout({ info, exp }: FormProps) {
     </section>
   );
 }
+
+export default AdminAbout

@@ -73,8 +73,6 @@ const NavBar = () => {
   }, [controls]);
 
 
-
-
   return (
     <nav
       className="top-0 inset-x-0 z-50 sticky max-w-[100rem] w-full mx-auto backdrop-filter backdrop-blur-lg border-b sm:flex sm:items-center sm:justify-between "
