@@ -35,7 +35,6 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
   const infos = await prisma.info.findMany();
   const experiences = await prisma.experience.findMany();
 
-
   return (
     <div>
       <div className="max-w-7xl px-10 mx-auto space-y-5 md:ml-[17rem] pt-20 min-h-screen">
@@ -126,5 +125,5 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
       </div>
     </div>
   );
-}
-export default AdminAbout
+};
+export default AdminAbout;
