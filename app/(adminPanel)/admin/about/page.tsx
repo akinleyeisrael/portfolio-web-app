@@ -37,7 +37,7 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
 
 
   return (
-    <section>
+    <div>
       <div className="max-w-7xl px-10 mx-auto space-y-5 md:ml-[17rem] pt-20 min-h-screen">
         <div className=" flex items-center space-x-2 mb-2 shadow-md rounded-lg bg-primary p-4">
           <h1 className="font-bold pl-5 text-primary-foreground">
@@ -124,8 +124,7 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
           </TableBody>
         </Table>
       </div>
-    </section>
+    </div>
   );
 }
-
 export default AdminAbout
