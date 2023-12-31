@@ -5,9 +5,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "mysql"
+//   url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model Info {
@@ -27,23 +33,20 @@ model Experience {
 }
 
 model Porfolio {
-  id          Int       @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   public_id   String?
   title       String?
   media       String
-  description String    @db.Text
+  description String   @db.Text
   link        String
   year        String?
-  webTechs    WebTech[]
-  createAt    DateTime  @default(now())
+  webTechs    String[]
+  createAt    DateTime @default(now())
 }
 
 model WebTech {
   id        Int    @id @default(autoincrement())
   framework String
-
-  Porfolio   Porfolio? @relation(fields: [porfolioId], references: [id])
-  porfolioId Int?
 }
 
 model VideoPortfolio {
