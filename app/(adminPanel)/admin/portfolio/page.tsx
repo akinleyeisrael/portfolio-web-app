@@ -30,7 +30,7 @@ interface Props {
   webTech: WebTech;
 }
 
-const adminPortfolio = async ({ porfolio, videoPortfolio, webTech }: Props) => {
+const adminPortfolio = async () => {
   const porfolios = await prisma.porfolio.findMany({
     include: {
       webTechs: true,
@@ -47,7 +47,7 @@ const adminPortfolio = async ({ porfolio, videoPortfolio, webTech }: Props) => {
           WebTechnology Form
         </h1>
       </div>
-      <WebTechForm webTech={webTech} />
+      <WebTechForm webTech={undefined} />
       <Table className="w-[500px]">
         <TableCaption>A list of your framework for portfolios.</TableCaption>
         <TableHeader>
@@ -80,7 +80,7 @@ const adminPortfolio = async ({ porfolio, videoPortfolio, webTech }: Props) => {
           Portfolio Form
         </h1>
       </div>
-      <PorfolioForm porfolio={porfolio} />
+      <PorfolioForm porfolio={undefined} />
       <Table>
         <TableCaption>A list of your recent portfolios.</TableCaption>
         <TableHeader>
@@ -141,7 +141,7 @@ const adminPortfolio = async ({ porfolio, videoPortfolio, webTech }: Props) => {
       <div className=" flex items-center space-x-2 mb-2 shadow-md rounded-lg bg-primary p-4">
         <h1 className="font-bold pl-5 text-primary-foreground">Video Form</h1>
       </div>
-      <VideoForm video={videoPortfolio} />
+      <VideoForm video={undefined} />
       <Table>
         <TableCaption>A list of your recent portfolios.</TableCaption>
         <TableHeader>

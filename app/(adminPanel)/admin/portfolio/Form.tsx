@@ -91,7 +91,7 @@ const ReactQuill = dynamic(() => import("react-quill"), {
 
 //OLD WAY OF DOING THINGSS
 export type InputsWebTech = z.infer<typeof webTechSchema>;
-export const WebTechForm = ({ webTech }: { webTech: WebTech }) => {
+export const WebTechForm = ({ webTech }: { webTech?: WebTech }) => {
     const router = useRouter();
     const [error, setError] = useState("");
     const [open, setOpen] = useState(false);
@@ -207,7 +207,7 @@ interface webTechProp {
     id: number,
     framework: string
 }
-export const PorfolioForm = ({ porfolio }: { porfolio: Porfolio }) => {
+export const PorfolioForm = ({ porfolio }: { porfolio?: Porfolio }) => {
     const router = useRouter();
     const [error, setError] = useState("");
     const [open, setOpen] = useState(false);
@@ -256,7 +256,7 @@ export const PorfolioForm = ({ porfolio }: { porfolio: Porfolio }) => {
             formData.append("builtWith", framework);
         });
 
-     
+
 
 
 
@@ -485,7 +485,7 @@ export const PorfolioForm = ({ porfolio }: { porfolio: Porfolio }) => {
 };
 
 export type InputsVideo = z.infer<typeof videoSchema>;
-export const VideoForm = ({ video }: { video: VideoPortfolio }) => {
+export const VideoForm = ({ video }: { video?: VideoPortfolio }) => {
     const router = useRouter();
     const [error, setError] = useState("");
     const [open, setOpen] = useState(false);
