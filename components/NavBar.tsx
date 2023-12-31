@@ -75,7 +75,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="top-0 inset-x-0 z-50 sticky max-w-[100rem] w-full mx-auto backdrop-filter backdrop-blur-lg border-b sm:flex sm:items-center sm:justify-between "
+      className="top-0 inset-x-0 z-50 sticky max-w-[100rem] w-full mx-auto backdrop-filter backdrop-blur-sm border-b sm:flex sm:items-center sm:justify-between "
       aria-label="Global"
     >
       <div className="flex items-center justify-between m-2">
