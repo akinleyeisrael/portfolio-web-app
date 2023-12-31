@@ -106,7 +106,7 @@ const ReactQuill = dynamic(
 
 export type InputInfo = z.infer<typeof infoSchema>;
 
-export const InfoForm = ({ info }: { info: Info }) => {
+export const InfoForm = ({ info }: { info?: Info }) => {
   const router = useRouter();
   const [err, setErr] = useState("");
   const [open, setOpen] = useState(false);
@@ -262,7 +262,7 @@ export const InfoForm = ({ info }: { info: Info }) => {
 };
 
 export type InputExperience = z.infer<typeof experienceSchema>;
-export const ExperienceForm = ({ exp }: { exp: Experience }) => {
+export const ExperienceForm = ({ exp }: { exp?: Experience }) => {
   const [err, setErr] = useState("");
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

@@ -7,6 +7,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import { motion } from "framer-motion"
 import dynamic from "next/dynamic";
 import { MotionDiv } from "../../components/framer";
+import { v2 as cloudinary } from "cloudinary";
 
 
 // const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
@@ -15,15 +16,15 @@ export default async function Home() {
   const experiences = await prisma.experience.findMany();
   const infos = await prisma.info.findMany()
 
-  //enable pdf deleivery in the cloudinary settings
-  // const downloadResume = (resumeUrl: string) => {
-  //   const url = cloudinary.url(resumeUrl, {
-  //     flags: "attachment:resume",
-  //     transformation: { filename: resumeUrl }
-  //   })
-  //   console.log(url)
-  //   return url
-  // }
+  // enable pdf deleivery in the cloudinary settings
+  const downloadResume = (resumeUrl: string) => {
+    const url = cloudinary.url(resumeUrl, {
+      flags: "attachment:resume",
+      transformation: { filename: resumeUrl }
+    })
+    console.log(url)
+    return url
+  }
 
   const variants = {
     initial: {
@@ -79,7 +80,7 @@ export default async function Home() {
                 </Link>
               </div>
               {infos.map(resume => (
-                <Link key={resume.id} href={(resume.resume!)}  >
+                <Link key={resume.id} href={(downloadResume(resume.resume!))}  >
                   <Button className="-inset-1 bg-gradient-to-r from-red-600 to-violet-600 rounded-lg  opacity-50 hover:opacity-100 transition duration-1000 group-hover:duration-200">
                     Download CV
                   </Button>

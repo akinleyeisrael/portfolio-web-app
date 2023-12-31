@@ -31,7 +31,7 @@ interface FormProps {
   exp: Experience;
 }
 
-const AdminAbout = async ({ info, exp }: FormProps) => {
+const AdminAbout = async () => {
   const infos = await prisma.info.findMany();
   const experiences = await prisma.experience.findMany();
 
@@ -43,7 +43,7 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
             Description Form
           </h1>
         </div>
-        <InfoForm info={info} />
+        <InfoForm info={undefined} />
         <Table>
           <TableCaption>Description Form</TableCaption>
           <TableHeader>
@@ -90,7 +90,7 @@ const AdminAbout = async ({ info, exp }: FormProps) => {
             Experience Form
           </h1>
         </div>
-        <ExperienceForm exp={exp} />
+        <ExperienceForm exp={undefined} />
         <Table>
           <TableCaption>Experience Form</TableCaption>
           <TableHeader>
