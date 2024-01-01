@@ -5,14 +5,14 @@ import { withAuth } from "next-auth/middleware";
 //     callbacks: {
 //         authorized:({token}) =>{
 //           !!token?.role ==="admin"
-//         } 
+//         }
 //     }
 // })
 
-export default withAuth({
-    pages: {
-        signOut: "/",
-    },
-});
+// export default withAuth({
+//     pages: {
+//         signOut: "/",
+//     },
+// });
 
 // export const config = { matcher: ['/admin/:path*'] }
