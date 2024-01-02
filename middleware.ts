@@ -9,10 +9,5 @@ import { withAuth } from "next-auth/middleware";
 //     }
 // })
 
-export default withAuth({
-    pages: {
-        signOut: "/",
-    },
-});
 
-export const config = { matcher: ['/admin/about'] }
+export const config = { matcher: ['/admin/:path*'] }

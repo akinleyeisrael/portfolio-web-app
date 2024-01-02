@@ -111,7 +111,8 @@ export async function DELETE(
     });
     if (!deletePortfolio)
         return NextResponse.json("id to delete not exist", { status: 404 });
-    
+
     revalidatePath("/admin/portfolio");
     return NextResponse.json(deletePortfolio, { status: 200 });
 }
+
